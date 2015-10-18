@@ -3,7 +3,7 @@
 set -e
 
 #export PACKER_LOG=1
-rm packer_virtualbox-iso_virtualbox.box || true
+rm devbox-jessie-iso_virtualbox.box || true
 packer build -only virtualbox-iso packer.json
-vagrant box remove vagrant_machine || true
-vagrant box add vagrant_machine packer_virtualbox-iso_virtualbox.box
+vagrant box remove devbox-jessie || true
+vagrant box add devbox-jessie devbox-jessie-iso_virtualbox.box
