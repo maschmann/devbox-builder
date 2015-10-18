@@ -3,7 +3,7 @@
 set -e
 
 #export PACKER_LOG=1
-rm devbox-15-04-iso_virtualbox.box || true
+rm packer_virtualbox-iso_virtualbox.box || true
 packer build -only virtualbox-iso packer.json
 vagrant box remove devbox-15-04 || true
-vagrant box add devbox-15-04 devbox-15-04-iso_virtualbox.box
+vagrant box add devbox-15-04 packer_virtualbox-iso_virtualbox.box
