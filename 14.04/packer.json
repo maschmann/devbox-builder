@@ -4,11 +4,12 @@
       "boot_command": [
         "<esc><esc><enter><wait>",
         "/install/vmlinuz noapic preseed/url=http://{{ .HTTPIP }}:{{ .HTTPPort }}/preseed.cfg <wait>",
-        "debian-installer=en_US auto locale=en_US kbd-chooser/method=us <wait>",
+        "debian-installer=de_DE auto locale=de_DE kbd-chooser/method=de <wait>",
         "hostname={{ .Name }} <wait>",
         "fb=false debconf/frontend=noninteractive <wait>",
-        "keyboard-configuration/modelcode=SKIP keyboard-configuration/layout=USA keyboard-configuration/variant=USA console-setup/ask_detect=false <wait>",
-        "initrd=/install/initrd.gz -- <enter><wait>"
+        "keyboard-configuration/modelcode=SKIP keyboard-configuration/layout=Germany keyboard-configuration/variant=Germany console-setup/ask_detect=false <wait>",
+        "initrd=/install/initrd.gz -- <enter><wait>",
+        "<enter><wait>"
       ],
       "boot_wait": "4s",
       "guest_additions_path": "VBoxGuestAdditions_{{.Version}}.iso",
